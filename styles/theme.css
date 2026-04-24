@@ -1,0 +1,268 @@
+/* ═══════════════════════════════════════════════════════
+   SkyPulse v2 — Complete Light Theme
+   ═══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── Base ──────────────────────────────────────────────── */
+html, body, .stApp {
+  background-color: #F7F8FA !important;
+  color: #1A1D23 !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+.block-container {
+  padding-top: 0 !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  max-width: 100% !important;
+}
+
+/* ── Hide Streamlit chrome ─────────────────────────────── */
+#MainMenu, footer, header { visibility: hidden; }
+.stDeployButton { display: none; }
+section[data-testid="stSidebarNav"],
+div[data-testid="stSidebarNav"] {
+  display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* ── TOP NAVIGATION BAR ────────────────────────────────── */
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border-bottom: 1.5px solid #E8EAF0;
+  padding: 0.6rem 1.5rem;
+  margin: -1rem -2rem 0;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+.nav-brand {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1A1D23;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+}
+.nav-links {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.nav-btn {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #6B7280;
+  background: transparent;
+  border: none;
+  cursor: default;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.nav-btn.active {
+  background: #EFF4FF;
+  color: #2563EB;
+  font-weight: 600;
+}
+.nav-hint {
+  font-size: 0.72rem;
+  color: #6B7280;
+  white-space: nowrap;
+  font-style: italic;
+}
+
+/* ── SIDEBAR ───────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+  background: #FFFFFF !important;
+  border-right: 1.5px solid #E8EAF0 !important;
+  min-width: 280px !important;
+}
+[data-testid="stSidebar"] > div:first-child {
+  padding-top: 0.5rem !important;
+}
+
+/* Sidebar radio nav labels — force visible dark text */
+[data-testid="stSidebar"] .stRadio label,
+[data-testid="stSidebar"] [role="radiogroup"] label,
+[data-testid="stSidebar"] [role="radiogroup"] label p,
+[data-testid="stSidebar"] [role="radiogroup"] label span {
+  color: #1A1D23 !important;
+  font-size: 0.88rem !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Sidebar section labels (NAVIGATE, FLIGHT PARAMETERS, etc) */
+[data-testid="stSidebar"] .stMarkdown p[style*="uppercase"] {
+  color: #6B7280 !important;
+  opacity: 1 !important;
+}
+
+/* Slider, selectbox, number input labels in sidebar */
+[data-testid="stSidebar"] .stSlider > label,
+[data-testid="stSidebar"] .stSelectbox > label,
+[data-testid="stSidebar"] .stNumberInput > label,
+[data-testid="stSidebar"] .stCheckbox > label {
+  color: #6B7280 !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  opacity: 1 !important;
+}
+
+/* Sidebar selectbox and input backgrounds */
+[data-testid="stSidebar"] .stSelectbox > div > div,
+[data-testid="stSidebar"] .stNumberInput > div > div {
+  background: #F7F8FA !important;
+  border: 1px solid #DDE0E8 !important;
+  color: #1A1D23 !important;
+}
+
+/* ── METRIC CARDS — comprehensive fix ─────────────────── */
+[data-testid="metric-container"] {
+  background: #FFFFFF !important;
+  border: 1px solid #E8EAF0 !important;
+  border-radius: 14px !important;
+  padding: 1rem 1.3rem !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] * {
+  color: #6B7280 !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+[data-testid="stMetricValue"],
+[data-testid="stMetricValue"] * {
+  color: #1A1D23 !important;
+  font-family: 'DM Mono', monospace !important;
+  font-size: 1.75rem !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+[data-testid="stMetricDelta"],
+[data-testid="stMetricDelta"] * {
+  font-size: 0.75rem !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* ── TABS ──────────────────────────────────────────────── */
+.stTabs [data-baseweb="tab-list"] {
+  gap: 0;
+  background: #EDEEF2;
+  border-radius: 12px;
+  padding: 4px;
+  border: none;
+}
+.stTabs [data-baseweb="tab"] {
+  border-radius: 9px;
+  color: #6B7280;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 500;
+  padding: 0.45rem 1.1rem;
+  letter-spacing: 0.01em;
+  border: none !important;
+}
+.stTabs [aria-selected="true"] {
+  background: #FFFFFF !important;
+  color: #1A1D23 !important;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.09) !important;
+  font-weight: 600 !important;
+}
+
+/* ── INPUTS ────────────────────────────────────────────── */
+.stSelectbox > div > div,
+.stNumberInput > div > div,
+.stTextInput > div > div {
+  background-color: #F7F8FA !important;
+  border: 1px solid #DDE0E8 !important;
+  border-radius: 10px !important;
+  color: #1A1D23 !important;
+}
+.stSelectbox > div > div:focus-within,
+.stNumberInput > div > div:focus-within {
+  border-color: #2563EB !important;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12) !important;
+}
+
+/* ── BUTTONS ───────────────────────────────────────────── */
+.stButton > button {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  padding: 0.65rem 1.8rem !important;
+  width: 100% !important;
+  transition: all 0.15s ease !important;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.25) !important;
+}
+.stButton > button:hover {
+  background: #1D4ED8 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 14px rgba(37,99,235,0.35) !important;
+}
+
+/* ── DOWNLOAD BUTTON ───────────────────────────────────── */
+.stDownloadButton > button {
+  background: #F0F4FF !important;
+  color: #2563EB !important;
+  border: 1.5px solid #BFCFEF !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  font-size: 0.82rem !important;
+  box-shadow: none !important;
+}
+
+/* ── SLIDER ────────────────────────────────────────────── */
+.stSlider > div > div > div { background: #2563EB !important; }
+
+/* ── DATAFRAME ─────────────────────────────────────────── */
+.stDataFrame {
+  border: 1px solid #E8EAF0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+/* ── EXPANDER ──────────────────────────────────────────── */
+.streamlit-expanderHeader {
+  font-weight: 600 !important;
+  color: #1A1D23 !important;
+  font-size: 0.88rem !important;
+}
+
+/* ── SCROLLBAR ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #F7F8FA; }
+::-webkit-scrollbar-thumb { background: #DDE0E8; border-radius: 3px; }
+
+/* ── PROGRESS BAR ──────────────────────────────────────── */
+.stProgress > div > div { background: #2563EB !important; }
+
+/* ── INFO / WARNING / ERROR BOXES ─────────────────────── */
+.stAlert { border-radius: 10px !important; }
